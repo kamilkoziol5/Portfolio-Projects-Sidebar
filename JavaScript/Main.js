@@ -8,7 +8,7 @@ function getBasePath() {
     return "";
   }
 
-  const depth = pathParts.length - repoIndex - 2;
+  const depth = Math.max(0, pathParts.length - repoIndex - 2);
   return "../".repeat(depth);
 }
 
