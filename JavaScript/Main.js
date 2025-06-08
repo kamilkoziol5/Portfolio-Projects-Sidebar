@@ -1,4 +1,14 @@
+function getBasePath() {
+  const pathParts = window.location.pathname.split("/").filter(Boolean);
+  const repoName = "Portfolio-Projects-Sidebar";
+  const repoIndex = pathParts.indexOf(repoName);
+  const depth = pathParts.length - 1 - repoIndex;
+  return "../".repeat(depth);
+}
+
 function renderSidebar() {
+  const base = getBasePath();
+
   const nav = document.createElement("nav");
   nav.classList.add("sidebar");
   nav.innerHTML = `
