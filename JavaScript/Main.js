@@ -13,8 +13,8 @@ function renderSidebar() {
   nav.classList.add("sidebar");
   nav.innerHTML = `
     <div class="logo-container">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" />
+      <a href="${base}index.html" class="logo">
+        <img src="${base}images/logo.png" alt="Logo" />
       </a>
 
       <button class="toogler" id="toogler-btn" title="Open Sidebar">
@@ -32,21 +32,21 @@ function renderSidebar() {
       </div>
       <ul class="menu-items">
         <li>
-          <a href="Projects/Lightbox-3/Lightbox.html" class="flex">
+          <a href="${base}Projects/Lightbox-3/Lightbox.html" class="flex">
             <i class="bx bx-images"></i>
             <span class="menu-item-title">Lightbox</span>
             <span class="tooltip">Lightbox</span>
           </a>
         </li>
         <li>
-          <a href="Projects/TimeApp-2/TimeApp.html" class="flex">
+          <a href="${base}Projects/TimeApp-2/TimeApp.html" class="flex">
             <i class="bx bx-timer"></i>
             <span class="menu-item-title">Time App</span>
             <span class="tooltip">Time App</span>
           </a>
         </li>
         <li>
-          <a href="Projects/Calculator-1/Calculator.html" class="flex">
+          <a href="${base}Projects/Calculator-1/Calculator.html" class="flex">
             <i class="bx bx-calculator"></i>
             <span class="menu-item-title">Calculator</span>
             <span class="tooltip">Calculator</span>
