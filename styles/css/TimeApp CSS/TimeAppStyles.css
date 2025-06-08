@@ -1,0 +1,335 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-title-container {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.main-title-container h2 {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 5.5vw, 3.5rem);
+}
+
+input {
+  background-color: #343434;
+  padding: 15px 25px;
+  max-width: 355px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #707070;
+  outline: none;
+  transition: 0.3s ease;
+  color: #dddddd;
+  font-size: 1.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input:focus {
+  border: 1px solid #4a3dff;
+}
+input:hover {
+  background-color: #141414;
+}
+
+#user-date {
+  cursor: pointer;
+}
+
+#time-button {
+  padding: 15px 25px;
+  color: #ffffff;
+  font-size: 30px;
+  border-radius: 4px;
+  background-color: #4a3dff;
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  transition: 0.3s ease;
+}
+#time-button:hover {
+  transform: scale(0.95);
+}
+
+#message {
+  position: relative;
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s ease;
+  transform: translateY(50px);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+#message.show {
+  transform: translateY(0);
+}
+#message .message-title {
+  padding: 20px;
+  border: 1px solid #707070;
+  box-shadow: 3px 3px 0 #707070;
+  color: #dddddd;
+  font-size: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+#message .message-title h3 {
+  word-wrap: break-word;
+  white-space: normal;
+  max-width: 80%;
+  font-size: 3.6rem;
+}
+#message .message-title .close-btn {
+  cursor: pointer;
+  width: 55px;
+  height: 55px;
+  padding: 10px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #707070;
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+#message .message-title .close-btn:hover {
+  background-color: #707070;
+}
+#message .message-title .div-span-inline {
+  font-size: 1.2rem;
+  color: #585858;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+#message .message-title .div-span-timer {
+  border: 1px solid #707070;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+#message .message-title .div-span-days {
+  color: #7da4ff;
+  font-size: 55px;
+  padding: 5px;
+  background-color: #000000;
+  border: 1px solid #707070;
+  margin-right: 5px;
+}
+#message .message-title .div-span-hours {
+  color: #296aff;
+  font-size: 50px;
+}
+#message .message-title .div-span-minutes {
+  color: #477fff;
+  font-size: 45px;
+}
+#message .message-title .div-span-seconds {
+  color: #d3d3d3;
+  font-size: 40px;
+}
+
+.flatpickr-calendar {
+  background: #343434;
+  border: 1px solid #707070;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  transition: 200ms ease;
+}
+.flatpickr-calendar.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 350px;
+  width: 100%;
+}
+
+.flatpickr-weekdays {
+  color: #ffffff !important;
+}
+
+.flatpickr-months {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+  padding: 15px 0;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.flatpickr-month {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  fill: #ffffff;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: #4a3dff;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  background-color: #343434;
+  font-size: 1rem;
+  transition: 200ms ease;
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months:hover {
+  background-color: #4a3dff;
+}
+
+.numInputWrapper span {
+  opacity: 1;
+}
+.numInputWrapper span.arrowUp {
+  background-color: #343434;
+  transition: 200ms ease;
+  margin-bottom: 2px;
+}
+.numInputWrapper span.arrowUp:hover {
+  background-color: #707070;
+}
+.numInputWrapper span.arrowUp:after {
+  border-bottom: 4px solid #ffffff !important;
+}
+.numInputWrapper span.arrowDown {
+  background-color: #343434;
+  transition: 200ms ease;
+}
+.numInputWrapper span.arrowDown:hover {
+  background-color: #707070;
+}
+.numInputWrapper span.arrowDown:after {
+  border-top: 4px solid #ffffff !important;
+}
+
+.flatpickr-current-month {
+  padding: 0;
+}
+
+span.flatpickr-weekday {
+  color: #ffffff;
+}
+
+.flatpickr-day.prevMonthDay {
+  color: #ffffff;
+  background-color: #141414;
+  transition: 200ms ease;
+}
+.flatpickr-day.prevMonthDay:hover {
+  color: #141414;
+}
+
+.flatpickr-day.nextMonthDay {
+  color: #ffffff;
+  background-color: #141414;
+  transition: 200ms ease;
+}
+.flatpickr-day.nextMonthDay:hover {
+  color: #141414;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background-color: #4a3dff !important;
+  color: #ffffff !important;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+}
+
+.flatpickr-day.flatpickr-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: rgba(165, 165, 165, 0.12);
+  color: rgba(255, 255, 255, 0.3058823529);
+}
+
+.flatpickr-day {
+  margin: 2px;
+  background-color: #707070;
+  color: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms ease;
+}
+.flatpickr-day:hover {
+  background: #4a3dff;
+  border-color: #4a3dff;
+}
+
+.flatpickr-day.today {
+  border: 1px solid #4a3dff;
+  color: #ffffff;
+  transition: 200ms ease;
+}
+.flatpickr-day.today:hover {
+  background: #4a3dff;
+}
+
+@media (max-width: 920px) {
+  body {
+    padding: 1rem;
+  }
+  .main-title-container {
+    margin-bottom: 1.5rem;
+  }
+  .main-title-container h1 {
+    font-size: 2.5rem;
+  }
+  #message .message-title {
+    padding: 15px;
+  }
+  #message .message-title h3 {
+    font-size: 1.8rem;
+    max-width: 68%;
+  }
+  #message .message-title .close-btn {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  #message .message-title .div-span-timer {
+    padding: 10px;
+    margin: 10px 0;
+  }
+  #message .message-title .div-span-days {
+    font-size: 2.5rem;
+  }
+  #message .message-title .div-span-hours {
+    font-size: 2.3rem;
+  }
+  #message .message-title .div-span-minutes {
+    font-size: 2.1rem;
+  }
+  #message .message-title .div-span-seconds {
+    font-size: 1.8rem;
+  }
+}/*# sourceMappingURL=TimeAppStyles.css.map */

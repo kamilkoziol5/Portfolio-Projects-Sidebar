@@ -1,0 +1,148 @@
+@import "../../styles/css/variables";
+
+main {
+  height: 100dvh;
+}
+
+.calculator {
+  margin: 1rem;
+  background-color: $backgroundGrayColor;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.75), 0 0 15px 10px rgba(0, 0, 0, 0.45);
+  border: 10px solid $strokeColor;
+
+  .output {
+    position: relative;
+    background: #030e07;
+    color: #e4e4e4;
+    font-size: 2em;
+    font-family: "Share Tech Mono", monospace;
+    padding: 12px;
+    text-align: right;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid $strokeColor;
+    line-height: 2em;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: $greenColor;
+      border-radius: 50%;
+    }
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    .btn {
+      min-height: 75px;
+      min-width: 75px;
+      padding: 20px;
+      font-size: 1.2em;
+      background-color: $backgroundGrayColor;
+      color: $whiteColor;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      border: 1px solid $strokeColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+
+      &:active {
+        background-color: $strokeColor;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.45);
+      }
+    }
+
+    .operator {
+      background-color: $orangeColor;
+      border: 1px solid $orangeColor;
+
+      &:active {
+        background-color: $orangeColorActive;
+      }
+    }
+
+    .equal {
+      grid-column: span 2;
+      background-color: $greenColor;
+      border: 1px solid $greenColor;
+
+      &:active {
+        background-color: $greenColorActive;
+      }
+    }
+    .clear {
+      grid-column: span 2;
+      background-color: $redColor;
+
+      border: 1px solid $redColor;
+      &:active {
+        background-color: $redColorActive;
+      }
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .buttons {
+    .btn:hover {
+      background-color: $strokeColor;
+      transform: scale(0.99);
+    }
+
+    .operator:hover {
+      background-color: $orangeColorHover;
+    }
+
+    .equal:hover {
+      background-color: $greenColorHover;
+    }
+
+    .clear:hover {
+      background-color: $redColorHover;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 0 4%;
+  }
+  .calculator {
+    padding: 10px;
+
+    .output {
+      padding: 10px;
+      margin-bottom: 12px;
+      font-size: 1.5em;
+      line-height: 1.5em;
+
+      &::after {
+        top: 4px;
+        width: 6px;
+        height: 6px;
+      }
+    }
+
+    .buttons {
+      gap: 6px;
+      .btn {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 1em;
+      }
+    }
+  }
+}
