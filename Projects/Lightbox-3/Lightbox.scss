@@ -22,12 +22,12 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 3%;
+  gap: 10px;
+  padding: 2%;
   flex-wrap: wrap;
   border: 1px solid $strokeColor;
   box-shadow: 3px 3px 0 $strokeColor;
-  margin: 1rem;
+  margin-top: 1rem;
 
   .gallery-el {
     height: 160px;
@@ -139,19 +139,23 @@ h2 {
 
   .lightbox-close {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 10px;
     width: 60px;
     height: 60px;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.4);
-    border: 0;
+    background: $grayDarkColor;
+    border: 1px solid $strokeColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: 0.3s ease;
 
     i {
-      font-size: 2rem;
-      color: $strokeColor;
+      font-size: 1.8rem;
+      line-height: auto;
+      color: $textColor;
       transition: 0.3s ease;
     }
 
@@ -159,7 +163,7 @@ h2 {
       background-color: $backgroundGrayColor;
 
       i {
-        color: #fff;
+        color: $whiteColor;
       }
     }
   }
@@ -295,7 +299,18 @@ h2 {
 
 @media (max-width: 900px) {
   .lightbox .lightbox-box {
-    margin-top: 150px;
+    margin-top: 65px;
+    max-width: 600px;
+  }
+  .lightbox .lightbox-close {
+    top: 87px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+
+    i {
+      font-size: 1.3rem;
+    }
   }
 }
 

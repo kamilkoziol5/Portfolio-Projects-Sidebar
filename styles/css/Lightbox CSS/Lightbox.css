@@ -19,12 +19,12 @@ h2:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 3%;
+  gap: 10px;
+  padding: 2%;
   flex-wrap: wrap;
   border: 1px solid #707070;
   box-shadow: 3px 3px 0 #707070;
-  margin: 1rem;
+  margin-top: 1rem;
 }
 .images-container .gallery-el {
   height: 160px;
@@ -128,26 +128,30 @@ h2:before {
 }
 .lightbox .lightbox-close {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
   width: 60px;
   height: 60px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.4);
-  border: 0;
+  background: #080808;
+  border: 1px solid #707070;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: 0.3s ease;
 }
 .lightbox .lightbox-close i {
-  font-size: 2rem;
-  color: #707070;
+  font-size: 1.8rem;
+  line-height: auto;
+  color: #dddddd;
   transition: 0.3s ease;
 }
 .lightbox .lightbox-close:hover {
   background-color: #343434;
 }
 .lightbox .lightbox-close:hover i {
-  color: #fff;
+  color: #ffffff;
 }
 .lightbox .lightbox-text {
   width: 100%;
@@ -271,7 +275,17 @@ h2:before {
 
 @media (max-width: 900px) {
   .lightbox .lightbox-box {
-    margin-top: 150px;
+    margin-top: 65px;
+    max-width: 600px;
+  }
+  .lightbox .lightbox-close {
+    top: 87px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox .lightbox-close i {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 650px) {

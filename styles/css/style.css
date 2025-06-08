@@ -212,7 +212,6 @@ main .main-content p {
   body {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-    height: 100dvh;
   }
   main {
     padding: 8% 4%;

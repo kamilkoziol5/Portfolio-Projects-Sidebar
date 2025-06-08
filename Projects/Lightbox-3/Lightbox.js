@@ -94,6 +94,7 @@ function lightbox(opts) {
   }
 
   function showLightbox() {
+    addOverflowHidden();
     DOM.lightbox.style.opacity = 0;
     document.body.append(DOM.lightbox);
     const anim = DOM.lightbox.animate([{ opacity: 0 }, { opacity: 1 }], {
@@ -104,6 +105,7 @@ function lightbox(opts) {
   }
 
   function hideLightbox() {
+    removeOverflowHidde();
     const anim = DOM.lightbox.animate([{ opacity: 1 }, { opacity: 0 }], {
       duration: 200,
     });
@@ -267,6 +269,15 @@ function lightbox(opts) {
     hideThumbnails,
     showThumbnails,
   };
+}
+
+function addOverflowHidden() {
+  document.body.style.overflow = "hidden";
+}
+
+function removeOverflowHidde() {
+  document.body.style.overflow = "visible";
+
 }
 
 const lightbox2 = lightbox({
