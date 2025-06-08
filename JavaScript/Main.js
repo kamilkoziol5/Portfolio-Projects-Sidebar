@@ -1,7 +1,13 @@
 function getBasePath() {
   const pathParts = window.location.pathname.split("/").filter(Boolean);
-  const repoName = "Portfolio-Projects-Sidebar";
+  const repoName = "Portfolio-Projects-Sidebar"; // zmień na swoją główną nazwę folderu, jeśli jest inna
   const repoIndex = pathParts.indexOf(repoName);
+
+  if (repoIndex === -1) {
+    // Jeśli repoName nie jest w ścieżce (np. lokalnie), zwracaj pusty string
+    return "";
+  }
+
   const depth = pathParts.length - 1 - repoIndex;
   return "../".repeat(depth);
 }
@@ -101,30 +107,39 @@ function renderSidebar() {
   `;
 
   const sidebarCtn = document.querySelector(".sidebar-app");
-  sidebarCtn.append(nav);
+  if (sidebarCtn) {
+    sidebarCtn.appendChild(nav);
+  } else {
+    console.error("Nie znaleziono elementu .sidebar-app");
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   renderSidebar();
+
   const sidebar = document.querySelector(".sidebar");
   const toogleBtn = document.getElementById("toogler-btn");
   const hamburgerBtn = document.querySelector(".hamburger");
   const menuIcon = document.getElementById("menuIcon");
 
-  toogleBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-    toogleBtn.classList.toggle("rotate");
-  });
+  if (toogleBtn && sidebar) {
+    toogleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      toogleBtn.classList.toggle("rotate");
+    });
+  }
 
-  hamburgerBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("collapsed");
+  if (hamburgerBtn && sidebar && menuIcon) {
+    hamburgerBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
 
-    if (menuIcon.classList.contains("bx-menu")) {
-      menuIcon.classList.remove("bx-menu");
-      menuIcon.classList.add("bx-x");
-    } else {
-      menuIcon.classList.remove("bx-x");
-      menuIcon.classList.add("bx-menu");
-    }
-  });
+      if (menuIcon.classList.contains("bx-menu")) {
+        menuIcon.classList.remove("bx-menu");
+        menuIcon.classList.add("bx-x");
+      } else {
+        menuIcon.classList.remove("bx-x");
+        menuIcon.classList.add("bx-menu");
+      }
+    });
+  }
 });
