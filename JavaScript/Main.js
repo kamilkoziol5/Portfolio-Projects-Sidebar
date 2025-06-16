@@ -1,5 +1,4 @@
 function renderSidebar() {
-  // Sprawdź hostname, aby wybrać basePath odpowiedni dla GitHub Pages
   const basePath =
     window.location.hostname === "kamilkoziol5.github.io"
       ? "/Portfolio-Projects-Sidebar"
@@ -49,7 +48,7 @@ function renderSidebar() {
           </a>
         </li>
         <li>
-          <a href="#" class="flex">
+          <a href="${basePath}/Projects/4-LocationMap/map.html" class="flex">
             <i class="bx bx-map"></i>
             <span class="menu-item-title">More Projects...</span>
             <span class="tooltip">Polish Map</span>

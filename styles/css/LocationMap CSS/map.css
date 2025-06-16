@@ -1,0 +1,141 @@
+main {
+  padding: 0;
+}
+
+.app {
+  width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.app .map {
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 700/654;
+  background-image: url("../../../images/mapa.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.map-text {
+  color: #dddddd;
+  font-size: clamp(14px, 2vw, 18px);
+}
+.map-text span {
+  color: #7369ff;
+  font-weight: 400;
+}
+
+.map-marker {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(to bottom, #7369ff, #4a3dff);
+  border-radius: 50%;
+  text-indent: -99999px;
+  overflow: hidden;
+  transform: scale(1);
+  transition: 0.5s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 5px 1px rgba(255, 255, 255, 0.2);
+}
+.map-marker::before {
+  content: "";
+  display: block;
+  background-color: #7369ff;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.99), inset 0 0 3px rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease;
+}
+.map-marker:hover {
+  transform: scale(1.05);
+}
+.map-marker:hover:before {
+  background-color: #928aff;
+}
+
+.map-tooltip {
+  padding: 10px 20px;
+  max-width: 250px;
+  background: #080808;
+  display: inline-block;
+  white-space: normal;
+  position: fixed;
+  transform: scale(0);
+  opacity: 0;
+  border-radius: 0 4px 4px 12px;
+  border: 1px solid #707070;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.85), 0 0 15px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: transform 400ms ease, opacity 700ms ease;
+  pointer-events: none;
+}
+.map-tooltip h2 {
+  font-size: clamp(13px, 2.3vw, 1.1rem);
+  margin-top: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.map-tooltip span {
+  color: #dddddd;
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+.map-tooltip span.strong {
+  color: #dddddd;
+  text-decoration: underline;
+  font-weight: 900;
+  font-size: 1rem;
+  margin-left: 5px;
+  padding: 3px;
+  background-color: #7369ff;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+.map-tooltip.active {
+  transform: scale(1);
+  opacity: 1;
+}
+.map-tooltip:before {
+  content: "\f3c5";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 18px;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  color: #7369ff;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(0.75) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(15deg);
+  }
+  100% {
+    transform: scale(0.75) rotate(0deg);
+  }
+}
+@media (max-width: 750px) {
+  .map-marker {
+    width: 20px;
+    height: 20px;
+  }
+  .map-tooltip {
+    display: none !important;
+  }
+}/*# sourceMappingURL=map.css.map */

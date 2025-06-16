@@ -34,7 +34,7 @@ input:focus {
   border: 1px solid #4a3dff;
 }
 input:hover {
-  background-color: #141414;
+  background-color: hsl(0, 0%, 8%);
 }
 
 #user-date {
@@ -165,7 +165,7 @@ input:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #141414;
+  background-color: hsl(0, 0%, 8%);
   padding: 15px 0;
   border-radius: 10px;
   color: #ffffff;
@@ -234,20 +234,20 @@ span.flatpickr-weekday {
 
 .flatpickr-day.prevMonthDay {
   color: #ffffff;
-  background-color: #141414;
+  background-color: hsl(0, 0%, 8%);
   transition: 200ms ease;
 }
 .flatpickr-day.prevMonthDay:hover {
-  color: #141414;
+  color: hsl(0, 0%, 8%);
 }
 
 .flatpickr-day.nextMonthDay {
   color: #ffffff;
-  background-color: #141414;
+  background-color: hsl(0, 0%, 8%);
   transition: 200ms ease;
 }
 .flatpickr-day.nextMonthDay:hover {
-  color: #141414;
+  color: hsl(0, 0%, 8%);
 }
 
 .flatpickr-day.selected,

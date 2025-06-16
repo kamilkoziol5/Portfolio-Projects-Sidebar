@@ -10,7 +10,7 @@
 body {
   display: grid;
   grid-template-columns: auto 1fr;
-  background-color: #141414;
+  background-color: hsl(0, 0%, 8%);
   overflow-x: hidden;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 .sidebar {
-  background-color: #141414;
+  background-color: hsl(0, 0%, 8%);
   border: 1px solid #707070;
   box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.9);
   border-radius: 6px;
