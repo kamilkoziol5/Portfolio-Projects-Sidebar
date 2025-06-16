@@ -50,8 +50,8 @@ function renderSidebar() {
         <li>
           <a href="${basePath}/Projects/4-LocationMap/map.html" class="flex">
             <i class="bx bx-map"></i>
-            <span class="menu-item-title">More Projects...</span>
-            <span class="tooltip">Polish Map</span>
+            <span class="menu-item-title">Cities Map</span>
+            <span class="tooltip">Cities Map</span>
           </a>
         </li>
       </ul>
