@@ -1,5 +1,9 @@
 function renderSidebar() {
-  const basePath = "/PORTFOLIO-SIDEBAR-PROJECT";
+  // Sprawdź hostname, aby wybrać basePath odpowiedni dla GitHub Pages
+  const basePath =
+    window.location.hostname === "kamilkoziol5.github.io"
+      ? "/Portfolio-Projects-Sidebar"
+      : "";
 
   const nav = document.createElement("nav");
   nav.classList.add("sidebar");
