@@ -1,26 +1,12 @@
 function getBasePath() {
-  const pathParts = window.location.pathname.split("/").filter(Boolean);
-  const repoName = "Portfolio-Projects-Sidebar"; // zmień na swoją główną nazwę folderu, jeśli jest inna
-  const repoIndex = pathParts.indexOf(repoName);
-
-  if (repoIndex === -1) {
-    // Jeśli repoName nie jest w ścieżce (np. lokalnie), zwracaj pusty string
-    return "";
-  }
-
-  const depth = Math.max(0, pathParts.length - repoIndex - 2);
-  return "../".repeat(depth);
-}
-
-function renderSidebar() {
-  const base = getBasePath();
+  const basePath = "/PORTFOLIO-SIDEBAR-PROJECT";
 
   const nav = document.createElement("nav");
   nav.classList.add("sidebar");
   nav.innerHTML = `
     <div class="logo-container">
-      <a href="${base}index.html" class="logo">
-        <img src="${base}images/logo.png" alt="Logo" />
+      <a href="${basePath}/index.html" class="logo">
+        <img src="${basePath}/images/logo.png" alt="Logo" />
       </a>
 
       <button class="toogler" id="toogler-btn" title="Open Sidebar">
@@ -38,21 +24,21 @@ function renderSidebar() {
       </div>
       <ul class="menu-items">
         <li>
-          <a href="${base}Projects/Lightbox-3/Lightbox.html" class="flex">
+          <a href="${basePath}/Projects/3-Lightbox/Lightbox.html" class="flex">
             <i class="bx bx-images"></i>
             <span class="menu-item-title">Lightbox</span>
             <span class="tooltip">Lightbox</span>
           </a>
         </li>
         <li>
-          <a href="${base}Projects/TimeApp-2/TimeApp.html" class="flex">
+          <a href="${basePath}/Projects/2-TimeApp/TimeApp.html" class="flex">
             <i class="bx bx-timer"></i>
             <span class="menu-item-title">Time App</span>
             <span class="tooltip">Time App</span>
           </a>
         </li>
         <li>
-          <a href="${base}Projects/Calculator-1/Calculator.html" class="flex">
+          <a href="${basePath}/Projects/1-Calculator/Calculator.html" class="flex">
             <i class="bx bx-calculator"></i>
             <span class="menu-item-title">Calculator</span>
             <span class="tooltip">Calculator</span>
@@ -60,9 +46,9 @@ function renderSidebar() {
         </li>
         <li>
           <a href="#" class="flex">
-            <i class="bx bx-grid-alt"></i>
+            <i class="bx bx-map"></i>
             <span class="menu-item-title">More Projects...</span>
-            <span class="tooltip">More Projects</span>
+            <span class="tooltip">Polish Map</span>
           </a>
         </li>
       </ul>
