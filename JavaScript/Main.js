@@ -1,4 +1,4 @@
-function getBasePath() {
+function renderSidebar() {
   const basePath = "/PORTFOLIO-SIDEBAR-PROJECT";
 
   const nav = document.createElement("nav");
