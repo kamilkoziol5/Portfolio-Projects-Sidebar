@@ -20,7 +20,6 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
   border: 1px solid #333;
   width: 700px;
-  max-width: 100%;
   max-height: 90vh;
   overflow: hidden;
   overflow-y: scroll;
@@ -54,7 +53,7 @@ body {
 }
 .container-wrapper .to-do-app .search-container input {
   flex: 1;
-  padding: 20px;
+  padding: 20px 120px 20px 20px;
   border: 1px solid #b4b4b4;
   outline: none;
   border-radius: 200px;
@@ -248,6 +247,7 @@ body {
   animation: fadeOutPopup 0.3s ease forwards;
 }
 .popup .again-btn {
+  position: relative;
   cursor: pointer;
   outline: none;
   border: none;
@@ -259,12 +259,42 @@ body {
   color: #fff;
   font-size: 1rem;
   border: 1px solid #333;
-  transition: 300ms ease;
+  transition: background-color 300ms ease, box-shadow 300ms ease;
   font-weight: 700;
   border-radius: 4px;
+  transition: 300ms ease;
+}
+.popup .again-btn::before, .popup .again-btn::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 8px;
+  background-color: #c788ff;
+  border: 1px solid #333;
+  transition: transform 300ms ease, background-color 300ms ease;
+}
+.popup .again-btn::before {
+  bottom: -4px;
+  left: 15%;
+  transform: translateX(0);
+}
+.popup .again-btn::after {
+  top: -4px;
+  right: 15%;
+  transform: translateX(0);
 }
 .popup .again-btn:hover {
   background-color: #b969ff;
+  box-shadow: 0 0 5px rgba(199, 136, 255, 0.9), 0 0 10px rgba(199, 136, 255, 0.6), 0 0 15px rgba(199, 136, 255, 0.25);
+  letter-spacing: 0.12rem;
+}
+.popup .again-btn:hover::before {
+  transform: translateX(320%);
+  background-color: #dcb4ff;
+}
+.popup .again-btn:hover::after {
+  transform: translateX(-320%);
+  background-color: #c788ff;
 }
 .popup .close-btn {
   cursor: pointer;
@@ -278,7 +308,7 @@ body {
   justify-content: center;
   background-color: #333;
   color: #fff;
-  border: 1px solid #333;
+  border: 1px solid #b4b4b4;
   transition: 300ms ease;
   font-weight: 700;
   border-radius: 50%;
@@ -292,10 +322,12 @@ body {
 }
 .popup .close-btn:hover {
   background-color: #b4b4b4;
-  transform: scale(0.9);
+  border-color: #fff;
+  transform: scale(0.95);
 }
 .popup .close-btn:hover i {
   color: #333;
+  transform: rotate(180deg);
 }
 .popup.closing {
   animation: slideOutPopup 0.5s ease forwards;
@@ -448,12 +480,12 @@ body {
 }
 .instruction-container .instruction-detail .btn-understand {
   width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1.5rem 0;
   display: flex;
   justify-content: center;
 }
 .instruction-container .instruction-detail .btn-understand button {
+  position: relative;
   cursor: pointer;
   outline: none;
   border: none;
@@ -465,12 +497,42 @@ body {
   color: #fff;
   font-size: 1rem;
   border: 1px solid #333;
-  transition: 300ms ease;
+  transition: background-color 300ms ease, box-shadow 300ms ease;
   font-weight: 700;
   border-radius: 4px;
+  transition: 300ms ease;
+}
+.instruction-container .instruction-detail .btn-understand button::before, .instruction-container .instruction-detail .btn-understand button::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 8px;
+  background-color: #c788ff;
+  border: 1px solid #333;
+  transition: transform 300ms ease, background-color 300ms ease;
+}
+.instruction-container .instruction-detail .btn-understand button::before {
+  bottom: -4px;
+  left: 15%;
+  transform: translateX(0);
+}
+.instruction-container .instruction-detail .btn-understand button::after {
+  top: -4px;
+  right: 15%;
+  transform: translateX(0);
 }
 .instruction-container .instruction-detail .btn-understand button:hover {
   background-color: #b969ff;
+  box-shadow: 0 0 5px rgba(199, 136, 255, 0.9), 0 0 10px rgba(199, 136, 255, 0.6), 0 0 15px rgba(199, 136, 255, 0.25);
+  letter-spacing: 0.12rem;
+}
+.instruction-container .instruction-detail .btn-understand button:hover::before {
+  transform: translateX(320%);
+  background-color: #dcb4ff;
+}
+.instruction-container .instruction-detail .btn-understand button:hover::after {
+  transform: translateX(-320%);
+  background-color: #c788ff;
 }
 .instruction-container .instruction-detail::before {
   content: "";
@@ -550,6 +612,29 @@ body {
   100% {
     opacity: 1;
     transform: translateY(70px) scale(1);
+  }
+}
+@keyframes showInstructionMobile {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-20px) scale(1.1);
+  }
+  50% {
+    transform: translateY(10px) scale(0.95);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.05);
+  }
+  90% {
+    transform: translateY(5px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(120px) scale(1);
   }
 }
 @keyframes removeInstruction {
@@ -635,9 +720,10 @@ body {
     transform: scale(0.2);
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .container-wrapper {
     padding: 30px;
+    width: 500px;
   }
   .container-wrapper .to-do-app h2 {
     flex-direction: column;
@@ -662,10 +748,17 @@ body {
     padding: 15px;
     font-size: 15px;
   }
+  .container-wrapper .to-do-app ul li .delete-btn {
+    width: 37px;
+    height: 37px;
+  }
   .popup .wrapper {
     max-width: 300px;
     gap: 15px;
     padding: 20px 30px;
+  }
+  .popup .wrapper .icon i {
+    font-size: 3.5rem;
   }
   .popup .again-btn {
     padding: 10px 20px;
@@ -674,6 +767,19 @@ body {
   .instruction-container .instruction-detail {
     max-width: 335px;
     padding: 15px 20px;
+    animation: showInstructionMobile 0.8s ease forwards;
+  }
+  .instruction-container .instruction-detail .star {
+    top: -15px;
+    right: -10px;
+  }
+  .instruction-container .instruction-detail .star img {
+    width: 45px;
+    height: 45px;
+  }
+  .instruction-container .instruction-detail .btn-understand button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
   }
   .instruction-container .instruction-detail .instruction-spans .instruction-item {
     gap: 5px;
@@ -688,20 +794,8 @@ body {
     padding: 8px 40px 8px 40px;
     font-size: 1rem;
   }
-  .container-wrapper .to-do-app ul li:before {
+  .container-wrapper .to-do-app ul li::before {
     width: 20px;
     height: 20px;
-  }
-  .instruction-container .instruction-detail .star {
-    top: -15px;
-    right: -10px;
-  }
-  .instruction-container .instruction-detail .star img {
-    width: 45px;
-    height: 45px;
-  }
-  .instruction-container .instruction-detail .btn-understand button {
-    padding: 10px 20px;
-    font-size: 0.85rem;
   }
 }/*# sourceMappingURL=ToDoApp.css.map */
