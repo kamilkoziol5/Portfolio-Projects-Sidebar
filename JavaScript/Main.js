@@ -54,6 +54,13 @@ function renderSidebar() {
             <span class="tooltip">Cities Map</span>
           </a>
         </li>
+         <li>
+          <a href="${basePath}/Projects/5-ToDoApp/ToDoApp.html" class="flex">
+            <i class='bx  bx-checklist'></i> 
+            <span class="menu-item-title">To Do App</span>
+            <span class="tooltip">To Do App</span>
+          </a>
+        </li>
       </ul>
     </div>
 
